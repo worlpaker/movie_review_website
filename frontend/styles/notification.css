@@ -1,0 +1,79 @@
+.notification {
+  align-items: center;
+  text-align: center;
+}
+
+.right_bottom {
+  position: fixed;
+  right: 0;
+  bottom: 20px;
+}
+
+.right_top {
+  position: fixed;
+  right: 0;
+  top: 70px;
+}
+
+.left_bottom {
+  position: fixed;
+  left: 0;
+  bottom: 20px;
+}
+
+.left_top {
+  position: fixed;
+  left: 0;
+  top: 70px;
+}
+
+.middle {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 300px;
+
+}
+
+.notification_box {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: relative;
+  width: 300px;
+  height: 50px;
+  border: 1px solid lightgray;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  border-radius: 8px;
+}
+
+.success_icon {
+  display: flex;
+  position: relative;
+  margin-right: 5px;
+
+}
+
+.error_icon {
+  display: flex;
+  position: relative;
+  margin-right: 5px;
+
+}
+
+.text {
+  display: flex;
+  position: relative;
+  float: left;
+  font-size: 12px;
+  font-family: sans-serif;
+}
+
+.close_icon {
+  display: flex;
+  position: relative;
+  left: right;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 20px;
+  opacity: 0.6;
+}

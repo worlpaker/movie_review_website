@@ -1,0 +1,55 @@
+version: "3"
+
+services:
+  mongodb:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    volumes:
+      - ~/apps/mongo:/data/db
+
+  redis:
+    image: redis:latest
+    ports:
+      - 6379:6379
+
+  frontend:
+    build:
+      context: "./frontend"
+    ports:
+      - "3000:3000"
+
+  go-web:
+    restart: always
+    env_file:
+      - "./backend/.env"
+    build:
+      context: "./backend"
+    environment:
+      - VIRTUAL_HOST=localhost
+      - LETSENCRYPT_HOST=localhost
+    depends_on:
+      - letsencrypt-nginx-proxy-companion
+
+  nginx-proxy:
+    restart: always
+    image: jwilder/nginx-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "/etc/nginx/vhost.d"
+      - "/usr/share/nginx/html"
+      - "/var/run/docker.sock:/tmp/docker.sock:ro"
+      - "/etc/nginx/certs"
+    depends_on:
+      - mongodb
+      - redis
+
+  letsencrypt-nginx-proxy-companion:
+    restart: always
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+    volumes_from:
+      - "nginx-proxy"

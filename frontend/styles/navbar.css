@@ -1,0 +1,135 @@
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+  background-color: rgb(255, 255, 255);
+  box-sizing: border-box;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: fixed;
+  resize: none;
+  width: 100%;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.navbar_logo {
+  flex: left;
+  display: flex;
+  margin-left: 400px;
+  margin-right: auto;
+  text-align: center;
+  cursor: pointer;
+}
+
+.navbar_search {
+  padding: 10px;
+  display: flex;
+  position: relative;
+  float: right;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  background-color: lightgray;
+  width: 220px;
+  max-width: 220px;
+  height: 18px;
+}
+
+.search {
+  display: flex;
+  position: relative;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.search_icon {
+  display: grid;
+  position: fixed;
+}
+
+.search_input {
+  display: flex;
+  position: relative;
+  outline: 0;
+  border: none;
+  background-color: transparent;
+  font-family: sans-serif;
+  font-size: 15px;
+  margin-left: 20px;
+}
+
+.navbar_icons {
+  display: flex;
+  position: relative;
+  float: right;
+  margin-right: 550px;
+
+}
+
+.navbar_icon {
+  margin-left: 10px;
+  font-size: 25px !important;
+  cursor: pointer;
+}
+
+.user_icon {
+  margin-left: 20px;
+  font-size: 25px !important;
+  cursor: pointer;
+
+}
+
+@media only screen and (max-width: 1570px) {
+
+  .navbar_logo {
+    display: flex;
+    float: left;
+    margin-left: 10px;
+  }
+
+}
+
+@media only screen and (max-width: 1185px) {
+
+  .navbar_icons {
+    position: relative;
+    float: right;
+    margin-right: 20px;
+  }
+
+}
+
+@media only screen and (max-width: 660px) {
+
+  .search,
+  .search_icon,
+  .search_input,
+  .navbar_search {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+
+  .navbar_logo {
+    display: none;
+    margin: auto;
+  }
+
+  .navbar_icons {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
+.navbar_below {
+  padding-top: 80px;
+}
+
+a {
+  color: black;
+}

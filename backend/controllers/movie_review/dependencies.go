@@ -1,0 +1,7 @@
+package Review
+
+import (
+	db "backend/database"
+)
+
+var DB = db.Handler
